@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust | Discover Your Next Adventure</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-plane-up"></i> Wanderlust</a>
+            <nav class="nav-links">
+                <a href="#destinations">Destinations</a>
+                <a href="#features">Why Us</a>
+                <a href="#offers">Special Offers</a>
+                <a href="#testimonials">Reviews</a>
+            </nav>
+            <a href="#cta" class="btn btn-outline">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Discover Your Next <span class="highlight">Adventure</span></h1>
+            <p class="hero-subtitle">Explore the world with the best travel deals. Curated experiences and unforgettable
+                journeys await.</p>
+            <div class="hero-buttons">
+                <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="section destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Find your next perfect getaway.</p>
+            </div>
+            <div class="grid destination-grid">
+                <!-- Card 1 -->
+                <div class="card dest-card">
+                    <div class="card-img">
+                        <img src="santorini.png" alt="Santorini" id="img-santorini">
+                        <span class="badge">Trending</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <p>Experience the stunning sunsets and pristine white architecture over the Aegean Sea.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,200</span>
+                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card dest-card">
+                    <div class="card-img">
+                        <img src="alps.png" alt="Swiss Alps" id="img-alps">
+                    </div>
+                    <div class="card-content">
+                        <h3>Swiss Alps</h3>
+                        <p>Breathe in the crisp mountain air and enjoy world-class skiing and chalets.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,500</span>
+                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card dest-card">
+                    <div class="card-img">
+                        <img src="maldives.png" alt="Maldives" id="img-maldives">
+                    </div>
+                    <div class="card-content">
+                        <h3>The Maldives</h3>
+                        <p>Relax in an overwater bungalow with crystal clear turquoise waves beneath you.</p>
+                        <div class="card-footer">
+                            <span class="price">From $2,800</span>
+                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="features" class="section features bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>We make your dream vacation a reality.</p>
+            </div>
+            <div class="grid feature-grid">
+                <div class="feature-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>Affordable Prices</h3>
+                    <p>We offer the most competitive rates and exclusive deals for all our destinations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>Trusted Guides</h3>
+                    <p>Explore with peace of mind alongside our completely vetted and experienced local guides.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Easy Booking</h3>
+                    <p>A seamless, hassle-free booking experience so you can focus on the fun.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section id="offers" class="section offers">
+        <div class="container">
+            <div class="offer-banner">
+                <div class="offer-content">
+                    <span class="offer-badge">20% OFF</span>
+                    <h2>Summer Getaway Packages</h2>
+                    <p>Book your dream summer vacation now and save big! Limited time offer.</p>
+                    <a href="#cta" class="btn btn-primary">Claim Offer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Travelers Say</h2>
+                <p>Real stories from our happy customers.</p>
+            </div>
+            <div class="grid testimonial-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best travel experience of my life! Everything was organized perfectly,
+                        and the Maldives resort was exactly as pictured."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Solo Traveler</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="review-text">"Exceptional service. Our trip to the Swiss Alps was smooth and effortless.
+                        The trusted guides really made a difference."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">M</div>
+                        <div class="reviewer-info">
+                            <h4>Michael Chen</h4>
+                            <span>Family Trip</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section id="cta" class="section cta bg-primary">
+        <div class="container text-center">
+            <h2 class="cta-title">Start Your Journey Today</h2>
+            <p class="cta-subtitle">Don't wait any longer. Let us help you plan the trip of a lifetime.</p>
+            <form class="cta-form" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-secondary">Plan Your Trip <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#" class="logo"><i class="fa-solid fa-plane-up"></i> Wanderlust</a>
+                <p>Your premier destination for booking unforgettable global experiences. Explore, dream, discover.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#destinations">Destinations</a>
+                <a href="#features">About Us</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</p>
+                <p><i class="fa-solid fa-envelope"></i> hello@wanderlust.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> 123 Travel Lane, NY 10001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wanderlust Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
