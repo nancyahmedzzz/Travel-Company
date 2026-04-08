@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details | Wanderlust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Details specific overrides */
+        .hero { min-height: 80vh; transform-origin: top; animation: scaleDown 1s cubic-bezier(0.7,0,0.3,1) forwards; }
+        @keyframes scaleDown { from { transform: scale(1.2); } to { transform: scale(1); } }
+        
+        .hero-title { font-size: 5rem; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .details-content { max-width: 800px; margin: 0 auto; padding: 5rem 2rem; text-align: center; font-size: 1.2rem; }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-box {
+            background: var(--card-bg, #fff);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transform: translateY(50px) scale(0.95);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            border: 2px solid var(--primary-turquoise);
+        }
+        .modal-overlay.active .modal-box {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-text, #1D2D35);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        body.dark-mode .modal-close { color: #e0e1dd; }
+        .modal-close:hover { transform: rotate(90deg); color: var(--accent-orange); }
+        .modal-title { font-family: var(--font-heading); font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 1rem; }
+        body.dark-mode .modal-title { color: var(--primary-turquoise); }
+        .modal-desc { margin-bottom: 2rem; color: var(--gray-text); }
+        .modal-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid #ccc;
+            outline: none;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--dark-text);
+            transition: border-color 0.3s;
+        }
+        body.dark-mode .modal-input { color: #fff; border-color: #333; }
+        .modal-input:focus { border-color: var(--primary-turquoise); }
+        .back-btn { margin-right: auto; color: var(--white); font-weight: 600; display:flex; align-items:center; gap:0.5rem; }
+        .back-btn:hover { color: var(--primary-turquoise); }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <i class="fa-solid fa-plane-departure plane-anim"></i>
+            <h2 style="margin-top:20px; font-family:var(--font-heading); color:var(--white); font-size:2rem; letter-spacing: 2px;">LOADING...</h2>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="background:none; border:none; color:var(--white); font-size:1.5rem; cursor:pointer;">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic Hero -->
+    <section class="hero" id="detail-hero" style="background: #111;">
+        <div class="hero-bg" id="hero-bg" style="background-image: none;"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center" style="max-width: 1000px; margin:0 auto;">
+            <h1 class="hero-title" id="detail-title">Destination</h1>
+            <p class="hero-subtitle" id="detail-subtitle" style="transform:none; opacity:1; animation:none; margin-top:20px;">Unveil the magic of the world</p>
+        </div>
+    </section>
+
+    <!-- Details Content -->
+    <section class="section">
+        <div class="container details-content reveal reveal-up">
+            <p id="detail-desc" style="line-height:2; margin-bottom: 3rem;">Loading destination details...</p>
+            <div class="price" style="font-size: 2rem; font-weight:700; color:var(--primary-turquoise); margin-bottom: 2rem;" id="detail-price">$0</div>
+            <button class="btn btn-primary btn-glow magic-btn" id="open-modal-btn" style="font-size:1.2rem; padding: 1rem 3rem;">Book This Experience</button>
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-box">
+            <button class="modal-close" id="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="modal-title">Ready to Pack?</h3>
+            <p class="modal-desc">Enter your email and our travel experts will send you a custom itinerary and an exclusive discount.</p>
+            <input type="email" class="modal-input" placeholder="Your Email Address" required>
+            <button class="btn btn-secondary btn-glow" style="width: 100%;">Send Itinerary</button>
+        </div>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <script src="details.js"></script>
+</body>
+</html>

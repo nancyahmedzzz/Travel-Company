@@ -17,6 +17,18 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <i class="fa-solid fa-plane-departure plane-anim"></i>
+            <h2 style="margin-top:20px; font-family:var(--font-heading); color:var(--white); font-size:2rem; letter-spacing: 2px;">WANDERLUST</h2>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <!-- Navbar -->
     <header class="header">
         <div class="container nav-container">
@@ -27,33 +39,46 @@
                 <a href="#offers">Special Offers</a>
                 <a href="#testimonials">Reviews</a>
             </nav>
-            <a href="#cta" class="btn btn-outline">Book Now</a>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="background:none; border:none; color:var(--white); font-size:1.5rem; cursor:pointer; transition:transform 0.3s; pointer-events: auto;">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#cta" class="btn btn-outline magic-btn">Book Now</a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg" id="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">Discover Your Next <span class="highlight">Adventure</span></h1>
+            <h1 class="hero-title"><span class="title-word">Discover</span> <span class="title-word">Your</span> <span class="title-word">Next</span> <span class="highlight title-word">Adventure</span></h1>
             <p class="hero-subtitle">Explore the world with the best travel deals. Curated experiences and unforgettable
                 journeys await.</p>
             <div class="hero-buttons">
-                <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+                <a href="#destinations" class="btn btn-primary btn-glow">Explore Destinations</a>
             </div>
+            <!-- Floating elements -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="floating-cloud cloud-1" alt="cloud">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="floating-cloud cloud-2" alt="cloud">
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll Down</p>
         </div>
     </section>
 
     <!-- Destinations Section -->
     <section id="destinations" class="section destinations">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal reveal-up">
                 <h2>Popular Destinations</h2>
                 <p>Find your next perfect getaway.</p>
             </div>
             <div class="grid destination-grid">
                 <!-- Card 1 -->
-                <div class="card dest-card">
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.1s;">
                     <div class="card-img">
                         <img src="santorini.png" alt="Santorini" id="img-santorini">
                         <span class="badge">Trending</span>
@@ -63,12 +88,12 @@
                         <p>Experience the stunning sunsets and pristine white architecture over the Aegean Sea.</p>
                         <div class="card-footer">
                             <span class="price">From $1,200</span>
-                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                            <a href="details.html?dest=santorini" class="btn btn-secondary btn-sm magic-btn">Details</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="card dest-card">
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.2s;">
                     <div class="card-img">
                         <img src="alps.png" alt="Swiss Alps" id="img-alps">
                     </div>
@@ -77,12 +102,12 @@
                         <p>Breathe in the crisp mountain air and enjoy world-class skiing and chalets.</p>
                         <div class="card-footer">
                             <span class="price">From $1,500</span>
-                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                            <a href="details.html?dest=alps" class="btn btn-secondary btn-sm magic-btn">Details</a>
                         </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="card dest-card">
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.3s;">
                     <div class="card-img">
                         <img src="maldives.png" alt="Maldives" id="img-maldives">
                     </div>
@@ -91,7 +116,51 @@
                         <p>Relax in an overwater bungalow with crystal clear turquoise waves beneath you.</p>
                         <div class="card-footer">
                             <span class="price">From $2,800</span>
-                            <a href="#cta" class="btn btn-secondary btn-sm">Details</a>
+                            <a href="details.html?dest=maldives" class="btn btn-secondary btn-sm magic-btn">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.4s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=600&auto=format&fit=crop" alt="Kyoto">
+                        <span class="badge" style="background: #9D4EDD;">Culture</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kyoto, Japan</h3>
+                        <p>Discover ancient temples, majestic bamboo forests, and breathtaking cherry blossoms.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,800</span>
+                            <a href="details.html?dest=kyoto" class="btn btn-secondary btn-sm magic-btn">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.5s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop" alt="Bali">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Lose yourself in the peaceful rice terraces, vibrant culture, and world-class surfing beaches.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,950</span>
+                            <a href="details.html?dest=bali" class="btn btn-secondary btn-sm magic-btn">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="card dest-card reveal reveal-up tilt-card" style="transition-delay: 0.6s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop" alt="Dubai">
+                        <span class="badge" style="background: #FFB703; color: #000;">Luxury</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Dubai, UAE</h3>
+                        <p>Experience ultra-luxury, stunning futuristic skyscrapers, and premium desert safaris.</p>
+                        <div class="card-footer">
+                            <span class="price">From $3,200</span>
+                            <a href="details.html?dest=dubai" class="btn btn-secondary btn-sm magic-btn">Details</a>
                         </div>
                     </div>
                 </div>
@@ -102,27 +171,27 @@
     <!-- Why Choose Us -->
     <section id="features" class="section features bg-light">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal reveal-up">
                 <h2>Why Choose Us</h2>
                 <p>We make your dream vacation a reality.</p>
             </div>
             <div class="grid feature-grid">
-                <div class="feature-card">
+                <div class="feature-card reveal reveal-up tilt-card" style="transition-delay: 0.1s;">
                     <div class="icon-wrap"><i class="fa-solid fa-wallet"></i></div>
                     <h3>Affordable Prices</h3>
                     <p>We offer the most competitive rates and exclusive deals for all our destinations.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card reveal reveal-up tilt-card" style="transition-delay: 0.2s;">
                     <div class="icon-wrap"><i class="fa-solid fa-map-location-dot"></i></div>
                     <h3>Trusted Guides</h3>
                     <p>Explore with peace of mind alongside our completely vetted and experienced local guides.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card reveal reveal-up tilt-card" style="transition-delay: 0.3s;">
                     <div class="icon-wrap"><i class="fa-solid fa-bolt"></i></div>
                     <h3>Easy Booking</h3>
                     <p>A seamless, hassle-free booking experience so you can focus on the fun.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card reveal reveal-up tilt-card" style="transition-delay: 0.4s;">
                     <div class="icon-wrap"><i class="fa-solid fa-headset"></i></div>
                     <h3>24/7 Support</h3>
                     <p>Our dedicated support team is available around the clock to assist you.</p>
@@ -134,7 +203,7 @@
     <!-- Special Offers -->
     <section id="offers" class="section offers">
         <div class="container">
-            <div class="offer-banner">
+            <div class="offer-banner reveal reveal-scale">
                 <div class="offer-content">
                     <span class="offer-badge">20% OFF</span>
                     <h2>Summer Getaway Packages</h2>
@@ -148,12 +217,12 @@
     <!-- Testimonials -->
     <section id="testimonials" class="section testimonials">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal reveal-up">
                 <h2>What Our Travelers Say</h2>
                 <p>Real stories from our happy customers.</p>
             </div>
             <div class="grid testimonial-grid">
-                <div class="review-card">
+                <div class="review-card reveal reveal-left tilt-card" style="transition-delay: 0.1s;">
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -169,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal reveal-right tilt-card" style="transition-delay: 0.3s;">
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -191,7 +260,7 @@
 
     <!-- Call To Action -->
     <section id="cta" class="section cta bg-primary">
-        <div class="container text-center">
+        <div class="container text-center reveal reveal-up">
             <h2 class="cta-title">Start Your Journey Today</h2>
             <p class="cta-subtitle">Don't wait any longer. Let us help you plan the trip of a lifetime.</p>
             <form class="cta-form" onsubmit="event.preventDefault();">
@@ -231,6 +300,9 @@
             <p>&copy; 2026 Wanderlust Agency. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
 
     <script src="main.js"></script>
 </body>
