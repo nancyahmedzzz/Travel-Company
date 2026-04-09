@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const interactiveElements = document.querySelectorAll('a, button, .btn, .feature-card, .dest-card, .review-card, input, .theme-toggle');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursorDot.style.width = '80px';
-                cursorDot.style.height = '80px';
+                cursorDot.style.width = '40px';
+                cursorDot.style.height = '40px';
             });
             el.addEventListener('mouseleave', () => {
                 cursorDot.style.width = '20px';
