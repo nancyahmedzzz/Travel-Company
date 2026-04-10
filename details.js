@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Page Transition
     const pageTransition = document.querySelector('.page-transition');
-    const links = document.querySelectorAll('a[href="index.html"]');
+    const links = document.querySelectorAll('a[href="index.html#destinations"]');
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();

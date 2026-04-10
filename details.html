@@ -62,6 +62,7 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
+        body.dark-mode .modal-box { background-color: #1E1E24; }
         body.dark-mode .modal-close { color: #e0e1dd; }
         .modal-close:hover { transform: rotate(90deg); color: var(--accent-orange); }
         .modal-title { font-family: var(--font-heading); font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 1rem; }
@@ -80,7 +81,7 @@
             color: var(--dark-text);
             transition: border-color 0.3s;
         }
-        body.dark-mode .modal-input { color: #fff; border-color: #333; }
+        body.dark-mode .modal-input { color: #e8e8e8; background-color: #1a1a1d; border-color: #333; }
         .modal-input:focus { border-color: var(--primary-turquoise); }
         .back-btn { margin-right: auto; color: var(--white); font-weight: 600; display:flex; align-items:center; gap:0.5rem; }
         .back-btn:hover { color: var(--primary-turquoise); }
@@ -102,7 +103,7 @@
     <!-- Navbar -->
     <header class="header">
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">
-            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <a href="index.html#destinations" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="background:none; border:none; color:var(--white); font-size:1.5rem; cursor:pointer;">
                     <i class="fa-solid fa-moon"></i>

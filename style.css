@@ -777,7 +777,7 @@ body {
   mix-blend-mode: difference;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100000;
+  z-index: 9999999;
   pointer-events: none;
   transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: width, height, left, top;
@@ -885,6 +885,11 @@ body.dark-mode .reviewer-info span {
 }
 body.dark-mode .card-footer {
   border-color: #333333;
+}
+
+body.dark-mode .cta-form input {
+  background-color: #1E1E24;
+  color: #E8E8E8;
 }
 
 /* Theme Toggle Button Animation */
